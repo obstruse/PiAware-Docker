@@ -1,6 +1,6 @@
 FROM resin/armv7hf-debian:jessie
 
-LABEL description="jessie v1.0 deploy with --privileged"
+LABEL description="jessie v1.1 deploy with --privileged"
 
 RUN [ "cross-build-start" ]
 
@@ -26,6 +26,7 @@ RUN apt-get -qq remove -y --purge \
 RUN rm -rf /var/lib/apt/lists/*
 
 COPY startPiaware.sh /root
+RUN chmod +x /root/startPiaware.sh
 
 RUN mkdir /run/dump1090-fa 
 RUN mkdir /run/piaware 
