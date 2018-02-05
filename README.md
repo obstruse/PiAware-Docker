@@ -24,6 +24,21 @@ or using the LibreELEC installer:
 
 https://libreelec.tv/downloads/
 
+#### Enable SSH
+
+* Kodi main menu -> Add-ons -> LibreELEC Configuration -> Services -> Enable SSH
+
+![SSH](Images/ssh.png)
+
+#### Blacklist RTL Kernel Module
+
+* Connect using SSH and create the blacklist file:
+
+```
+echo 'blacklist dvb-usb-rtl28xxu' > /etc/modprobe.d/blacklist-rtl28xxu.conf
+```
+
+* Reboot
 
 ### Install Add-ons:
 
