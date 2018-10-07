@@ -1,6 +1,6 @@
-FROM resin/armv7hf-debian:jessie
+FROM resin/armv7hf-debian:stretch
 
-LABEL description="jessie v1.1 deploy with --privileged"
+LABEL description="stretch v1.1 deploy with --privileged"
 
 RUN [ "cross-build-start" ]
 
@@ -10,9 +10,9 @@ RUN apt-get -qq install --no-install-recommends -y \
     apt-utils \
     wget 
 
-RUN wget -q http://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_3.5.3_all.deb
+RUN wget -q http://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_3.6.3_all.deb
 
-RUN dpkg -i piaware-repository_3.5.3_all.deb
+RUN dpkg -i piaware-repository_3.6.3_all.deb
 
 RUN apt-get -qq update
 RUN apt-get -qq install --no-install-recommends -y \
@@ -30,6 +30,7 @@ RUN chmod +x /root/startPiaware.sh
 
 RUN mkdir /run/dump1090-fa 
 RUN mkdir /run/piaware 
+RUN cp /etc/lighttpd/conf-available/89-dump1090-fa.conf /etc/lighttpd/conf-enabled
 
 CMD  /root/startPiaware.sh
 
