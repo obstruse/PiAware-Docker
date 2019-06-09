@@ -87,7 +87,8 @@ Access Portainer at:  http://192.168.1.12:9000 (replace the IP with the address 
 ![Restart Policy](Images/restartpolicy.png)
 ![Resources](Images/resource.png)
 
-The PiAware Skyview web page is now available on port 8180 on your Raspberry Pi.
+The PiAware Skyview web page will be available on port 8180 on your Raspberry Pi;
+the OpenLayers3 web page will be available on port 8181.
 
 ### Claim your PiAware client on FlightAware.com
 
