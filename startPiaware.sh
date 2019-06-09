@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# restore the feeder-id from non-volatile storage
+[ -e /dockerShare/piaware.conf ] && cp /dockerShare/piaware.conf /etc/piaware.conf
+
 source /etc/default/dump1090-fa
 if [ -e /var/cache/piaware/location.env ] ; then
 	source /var/cache/piaware/location.env
