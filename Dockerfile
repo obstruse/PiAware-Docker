@@ -1,8 +1,10 @@
-FROM resin/armv7hf-debian:stretch
+FROM balenalib/armv7hf-debian:stretch
 
 LABEL description="stretch v1.1 deploy with --privileged"
 
 RUN [ "cross-build-start" ]
+
+ENV UDEV=1
 
 # Install packages
 RUN apt-get -qq update 
