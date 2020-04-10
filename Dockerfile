@@ -1,4 +1,4 @@
-FROM balenalib/armv7hf-debian:stretch
+FROM balenalib/armv7hf-debian:buster
 
 LABEL description="stretch v1.1 deploy with --privileged"
 
@@ -13,9 +13,9 @@ RUN apt-get -qq install --no-install-recommends -y \
     wget \
     git
 
-RUN wget -q http://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_3.7.1_all.deb
+RUN wget -q http://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_3.8.1_all.deb
 
-RUN dpkg -i piaware-repository_3.7.1_all.deb
+RUN dpkg -i piaware-repository_3.8.1_all.deb
 
 RUN apt-get -qq update
 RUN apt-get -qq install --no-install-recommends -y \
