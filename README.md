@@ -1,5 +1,7 @@
 # PiAware
-Automated Docker build of PiAware 3.7.1 + dump1090-fa + lighttpd. For Raspberry Pi
+Automated Docker build of PiAware 3.8.1 + dump1090-fa + lighttpd. For Raspberry Pi
+
+https://github.com/obstruse/PiAware-Docker/blob/master/README.md
 
 Built on Docker Hub using cross-build emulation (QEMU):
 
