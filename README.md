@@ -1,13 +1,10 @@
 # PiAware
-Automated Docker build of PiAware 3.8.1 + dump1090-fa + lighttpd. For Raspberry Pi
+Docker build of PiAware 5.0 + dump1090-fa + OpenLayers3 + lighttpd, for Raspberry Pi.
 
-https://github.com/obstruse/PiAware-Docker/blob/master/README.md
+https://github.com/obstruse/PiAware-Docker<br>
+https://hub.docker.com/r/obstruse/piaware
 
-Built on Docker Hub using cross-build emulation (QEMU):
-
-https://hub.docker.com/r/obstruse/piaware/
-
-Intended for use on LibreELEC(Kodi) with Docker and Portainer addons, but not required.
+Intended for use on LibreELEC(Kodi) with Docker and Portainer addons.
 
 ## Hardware
 
@@ -30,7 +27,7 @@ https://libreelec.tv/downloads/
 
 * Kodi main menu -> Add-ons -> LibreELEC Configuration -> Services -> Enable SSH
 
-![SSH](https://github.com/obstruse/PiAware-Docker/blob/master/Images/ssh.png)
+![SSH](https://github.com/obstruse/PiAware-Docker/raw/master/Images/ssh.png "SSH")
 
 #### Blacklist RTL Kernel Module
 
@@ -48,27 +45,27 @@ Install the Docker add-on :
 
 * Kodi main menu ->  Add-ons -> Install from repository 
 
-![Install from Repo](https://github.com/obstruse/PiAware-Docker/blob/master/Images/installFromRep.png)
+![Install from Repo](https://github.com/obstruse/PiAware-Docker/raw/master/Images/installFromRep.png "Install from Repo")
 
 * LibreELEC Add-ons -> Services -> Docker
 
-![Docker](https://github.com/obstruse/PiAware-Docker/blob/master/Images/docker.png)
+![Docker](https://github.com/obstruse/PiAware-Docker/raw/master/Images/docker.png "Docker")
 
 Install the Portainer add-on:
 * LibreELEC Add-ons -> Add-on Repository -> LinuxServer.io's Docker Add-ons
 
-![Docker Repo](https://github.com/obstruse/PiAware-Docker/blob/master/Images/dockerRepo.png)
+![Docker Repo](https://github.com/obstruse/PiAware-Docker/raw/master/Images/dockerRepo.png "Docker Repo")
 
 * Kodi main menu -> Add-ons -> Install from repository 
 * LinuxServer.io's Docker Add-ons -> Services -> Portainer
 
-![Portainer](https://github.com/obstruse/PiAware-Docker/blob/master/Images/portainer.png)
+![Portainer](https://github.com/obstruse/PiAware-Docker/raw/master/Images/portainer.png "Portainer")
 
 ## Install Piaware
 
 Access Portainer at:  http://192.168.1.12:9000 (replace the IP with the address of your Raspberry Pi)
 
-![Dashboard](https://github.com/obstruse/PiAware-Docker/blob/master/Images/dashboard.png)
+![Dashboard](https://github.com/obstruse/PiAware-Docker/raw/master/Images/dashboard.png "Dashboard")
 
 ### Deploy Container
 
@@ -85,9 +82,9 @@ Access Portainer at:  http://192.168.1.12:9000 (replace the IP with the address 
   * Runtime & Resources: Privileged Mode
 * Click **Deploy the container**
 
-![Container-1](https://github.com/obstruse/PiAware-Docker/blob/master/Images/container1.png)
-![Restart Policy](https://github.com/obstruse/PiAware-Docker/blob/master/Images/restartpolicy.png)
-![Resources](https://github.com/obstruse/PiAware-Docker/blob/master/Images/resource.png)
+![Container-1](https://github.com/obstruse/PiAware-Docker/raw/master/Images/container1.png "Container1")
+![Restart Policy](https://github.com/obstruse/PiAware-Docker/raw/master/Images/restartpolicy.png "Restart Policy")
+![Resources](https://github.com/obstruse/PiAware-Docker/raw/master/Images/resource.png "Resources")
 
 The PiAware Skyview web page will be available on port 8180 on your Raspberry Pi;
 the OpenLayers3 web page will be available on port 8181.
