@@ -1,3 +1,4 @@
+![dark](https://github.com/obstruse/PiAware-Docker/raw/master/Images/dark3-2.png "dark")
 # PiAware
 Docker build of PiAware 5.0 + dump1090-fa + OpenLayers3 + lighttpd, for Raspberry Pi.
 
@@ -8,16 +9,16 @@ Intended for use on LibreELEC(Kodi) with Docker and Portainer addons.
 
 ## Hardware
 
-- Raspberry Pi 3 (https://www.adafruit.com/product/3055)
+- Raspberry Pi 3 (e.g.: https://www.adafruit.com/product/3775)
 - RTL-SDR Dongle (e.g.: https://www.rtl-sdr.com/buy-rtl-sdr-dvb-t-dongles/ )
 
 ## Prepare Raspberry Pi
 
 ### Install LibreELEC
 
-Boot the Pi using LibreELEC from NOOBS:
+Boot the Pi using LibreELEC from PINN (PINN Is Not NOOBS):
 
-https://www.raspberrypi.org/downloads/noobs/
+https://sourceforge.net/projects/pinn/
 
 or using the LibreELEC installer:
 
@@ -112,3 +113,5 @@ piaware-config feeder-id
 ```
 * Paste the unique identifier.
 * Restart piaware
+
+![enroute](https://github.com/obstruse/PiAware-Docker/raw/master/Images/enroute2-2.png "enroute")
