@@ -122,7 +122,7 @@ ChartBundleLayers = true;
 // Be sure to quote your key:
 //   BingMapsAPIKey = "your key here";
 //
-BingMapsAPIKey = null;
+BingMapsAPIKey = "";
 
 // Provide a Mapzen API key here to enable the Mapzen vector tile layer.
 // You can obtain a free key at https://mapzen.com/developers/
@@ -165,14 +165,25 @@ ShowMouseLatLong     = true ;  // https://github.com/alkissack/Dump1090-OpenLaye
 ShowAdditionalMaps   = true ;  // https://github.com/alkissack/Dump1090-OpenLayers3-html/wiki/2.-Additional-maps
 ShowPermanentLabels  = false ;  // https://github.com/alkissack/Dump1090-OpenLayers3-html/wiki/7.-Permanent-labels
 ShowHoverOverLabels  = true ;  // https://github.com/alkissack/Dump1090-OpenLayers3-html/wiki/6.-Hover-over-labels
-ShowMaxRange         = true ;  // https://github.com/alkissack/Dump1090-OpenLayers3-html/wiki/8.-Maximum-range-plot
-			       // If showing ranges, set SiteLat/SiteLon as these are the zero range positions till plot is drawn
-MinRangeHeight	     =   1000 ; // ft - inner range ring - Set -1 to disable
-MinRangeLikely 	     =   170 ; // nm - practical max (to supress spikes from bad data)
-MidRangeHeight	     = 10000 ; // ft - mid range ring - Set -1 to disable
-MidRangeLikely 	     =   220 ; // nm - practical max
-MaxRangeLikely 	     =   300 ; // nm - practical max
-RangeLine	     =     1 ; // Line width for range rings
+ShowRanges           = true ;  // https://github.com/alkissack/Dump1090-OpenLayers3-html/wiki/8.-Maximum-range-plot
+
+			         // If showing ranges, set SiteLat/SiteLon as these are the zero range positions till plot is drawn
+MinRangeHeight	     =  2000 ; // ft - inner range ring - Set -1 to disable collection and display
+MinRangeLikely 	     =    75 ; // nm - practical max (to supress spikes from bad data)
+MinRangeShow         = true ; // set to show min range currently captured (assuming MinRangeHeight is set too)
+
+MidRangeHeight	     = 10000 ; // ft - mid range ring - Set -1 to disable collection and display
+MidRangeLikely 	     =   125 ; // nm - practical max
+MidRangeShow         = true ; // set to show mid range currently captured (assuming MidRangeHeight is set too)
+
+MaxRangeHeight       = 50000 ; 
+MaxRangeLikely 	     =   300 ; // nm - practical max 300
+MaxRangeShow         =  true ; // set to show max range currently captured 
+
+RangeLine	     =     1 ; // Line width for range plot
+
+TypeOfStorageSession = 'Local' ;  // Local or Session - Session applies per browser session, Local persists for the browser if closed and reopened.
+
 // ----------------------------------------------------------------------------------------------------------------------------
 //           UK ONLY :
 // ----------------------------------------------------------------------------------------------------------------------------

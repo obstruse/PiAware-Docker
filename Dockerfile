@@ -1,6 +1,6 @@
-FROM balenalib/armv7hf-debian:buster
+FROM balenalib/armv7hf-debian:bullseye
 
-LABEL description="buster v1.1 deploy with --privileged"
+LABEL description="bullseye v1.0 deploy with --privileged"
 
 RUN [ "cross-build-start" ]
 
@@ -13,9 +13,8 @@ RUN apt-get -qq install --no-install-recommends -y \
     wget \
     git
 
-RUN wget -q https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_5.0_all.deb
-
-RUN dpkg -i piaware-repository_5.0_all.deb
+RUN wget -q https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_7.2_all.deb
+RUN dpkg -i piaware-repository_7.2_all.deb
 
 RUN apt-get -qq update
 RUN apt-get -qq install --no-install-recommends -y \

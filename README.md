@@ -1,6 +1,6 @@
 ![dark](https://github.com/obstruse/PiAware-Docker/raw/master/Images/dark3-2.png "dark")
 # PiAware
-Docker build of PiAware 5.0 + dump1090-fa + OpenLayers3 + lighttpd, for Raspberry Pi.
+Docker build of PiAware 7.2 + dump1090-fa + OpenLayers3 + lighttpd, for Raspberry Pi.
 
 https://github.com/obstruse/PiAware-Docker<br>
 https://hub.docker.com/r/obstruse/piaware
@@ -68,6 +68,27 @@ Access Portainer at:  http://192.168.1.12:9000 (replace the IP with the address 
 
 ![Dashboard](https://github.com/obstruse/PiAware-Docker/raw/master/Images/dashboard.png "Dashboard")
 
+### Add tmpfs Volume
+
+* Volumes -> Add volume
+  * Name: run
+  * Driver: local
+  * Driver options -> add driver option
+    * name: device
+    * value: tmpfs
+  * Driver options -> add driver option
+    * name: type
+    * value: tmpfs
+  * Driver options -> add driver option
+    * name: o
+    * value: size=20m,uid=1000
+  * Use NFS volume: off
+  * Use CIFS volume: off
+  * Enable access control: off
+* Click **Create the volume**
+
+![tmpfs](https://github.com/obstruse/PiAware-Docker/raw/master/Images/tmpfs.png "tmpfs")
+  
 ### Deploy Container
 
 * Containers -> Add container
@@ -79,11 +100,15 @@ Access Portainer at:  http://192.168.1.12:9000 (replace the IP with the address 
     * 30105 -> 30105 (MLAT data in Beast format)
   * Disable Access control
   * Console:  Interactive & TTY
+  * Volumes -> map additional volume
+    * Container: /run  Volume
+    * volume: run - local  Writable  
   * Restart policy: Unless stopped
   * Runtime & Resources: Privileged Mode
 * Click **Deploy the container**
 
 ![Container-1](https://github.com/obstruse/PiAware-Docker/raw/master/Images/container1.png "Container1")
+![Volumes](https://github.com/obstruse/PiAware-Docker/raw/master/Images/volumes.png "Volumes")
 ![Restart Policy](https://github.com/obstruse/PiAware-Docker/raw/master/Images/restartpolicy.png "Restart Policy")
 ![Resources](https://github.com/obstruse/PiAware-Docker/raw/master/Images/resource.png "Resources")
 
