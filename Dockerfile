@@ -11,10 +11,10 @@ RUN apt-get -qq update
 RUN apt-get -qq install --no-install-recommends -y \
     apt-utils \
     wget \
-    git
+    git 
 
-RUN wget -q https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_7.2_all.deb
-RUN dpkg -i piaware-repository_7.2_all.deb
+RUN wget -q https://flightaware.com/adsb/piaware/files/packages/pool/piaware/f/flightaware-apt-repository/flightaware-apt-repository_1.2_all.deb
+RUN dpkg -i flightaware-apt-repository_1.2_all.deb
 
 RUN apt-get -qq update
 RUN apt-get -qq install --no-install-recommends -y \
@@ -22,7 +22,7 @@ RUN apt-get -qq install --no-install-recommends -y \
       dump1090-fa 
 
 # openLayers
-RUN git clone  https://github.com/alkissack/Dump1090-OpenLayers3-html.git
+RUN git clone  https://github.com/alkissack/Dump1090-OpenLayers-html.git
 
 # remove install tools
 RUN apt-get -qq remove -y --purge \
@@ -36,8 +36,10 @@ RUN mkdir /run/dump1090-fa
 RUN mkdir /run/piaware 
 #RUN cp /etc/lighttpd/conf-available/89-dump1090-fa.conf /etc/lighttpd/conf-enabled
 
-COPY 90-Dump1090-OpenLayers3.conf /etc/lighttpd/conf-enabled
-COPY config.js Dump1090-OpenLayers3-html/public_html
+COPY 90-Dump1090-OpenLayers.conf /etc/lighttpd/conf-enabled
+COPY config.js Dump1090-OpenLayers-html/public_html
+COPY index.html Dump1090-OpenLayers-html/public_html
+COPY script.js Dump1090-OpenLayers-html/public_html
 
 # startup script
 COPY startPiaware.sh /root

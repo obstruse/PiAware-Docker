@@ -1,6 +1,6 @@
 ![dark](https://github.com/obstruse/PiAware-Docker/raw/master/Images/dark3-2.png "dark")
 # PiAware
-Docker build of PiAware 7.2 + dump1090-fa + OpenLayers3 + lighttpd, for Raspberry Pi.
+Docker build of PiAware 9.0 + dump1090-fa + OpenLayers + lighttpd, for Raspberry Pi.
 
 https://github.com/obstruse/PiAware-Docker<br>
 https://hub.docker.com/r/obstruse/piaware
